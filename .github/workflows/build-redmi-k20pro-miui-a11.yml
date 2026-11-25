@@ -1,4 +1,4 @@
-name: Build Xiaomi Redmi K20 Pro (MIUI 12.5 A11)
+name: Build Xiaomi 12x (MIUI 13 A11)
 
 on:
   workflow_call:
@@ -6,14 +6,14 @@ on:
 
 env:
   # Device env
-  DEVICE_NAME : "redmi_k20_pro"
-  DEVICE_CODENAME : "raphael"
+  DEVICE_NAME : "12x"
+  DEVICE_CODENAME : "psyche"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu- SUBARCH=arm64"
   EXTRA_CMDS : "LOCALVERSION=-Marisa-r23"
 
-  KERNEL_SOURCE : "https://github.com/GengWei1997/android_kernel_xiaomi_sm8150.git"
-  KERNEL_BRANCH : "Droidspaces"
+  KERNEL_SOURCE : "https://github.com/micode/xiaomi_kernel_opensource"
+  KERNEL_BRANCH : "psyche-r-oss"
 
   CLANG_SOURCE : "https://github.com/kdrag0n/proton-clang.git"
   CLANG_BRANCH : "master"
@@ -91,7 +91,7 @@ env:
 
 jobs:
   build-kernel:
-    name: Xiaomi Redmi K20 Pro (MIUI 12.5 A11)
+    name: Xiaomi12x
     runs-on: ubuntu-24.04 # u can changed to ubuntu 22.04, and need container set ubuntu-24.04
     # container: archlinux/archlinux:latest # if u need use arch linux -> archlinux/archlinux:latest or ubuntu 20.04 -> ubuntu:focal
     env:
